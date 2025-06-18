@@ -14,7 +14,7 @@ form.addEventListener("submit", function(e) {
     num1V = parseFloat(num1.value);
     num2V = parseFloat(num2.value);
     if (isNaN(num1V) || isNaN(num2V)) {
-        mensagem.innerHTML = "Por favor, insira números válidos!!";
+        mensagem.innerHTML = "Por favor, insira números válidos!!!";
     } else if (num1V < num2V) {
         mensagem.innerHTML = `O Número ${num1V}, é menor que o número ${num2V}. Parabéns...`;
     } else if (num1V === num2V) {
