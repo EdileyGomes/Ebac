@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+</head>
+<body>
+    <h1>Sla</h1>
+    <form id="formulario">
+        <div class="inputs">
+            <input type="number" name="" id="numA" placeholder="Número A" min="0" required>
+            <input type="number" name="" id="numB" placeholder="Número B" min="0" required>
+            <button type="submit" id="enviar">Enviar</button>
+        </div>
+    </form>
+    <p id="mensagem-sucesso">Olá... Digite 2 Valores nos campos!!!</p>
+    <p id="mensagem-erro"></p>
+
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const numA = parseFloat(document.getElementById('numA').value);
+            const numB = parseFloat(document.getElementById('numB').value);
+            const mensagemSucesso = document.getElementById('mensagem-sucesso');
+            const mensagemErro = document.getElementById('mensagem-erro');
+
+            if (isNaN(numA) || isNaN(numB)) {
+                mensagemErro.textContent = 'Por favor, insira números válidos.';
+                mensagemSucesso.textContent = '';
+            } else {
+                mensagemSucesso.textContent = `Você digitou: ${numA} e ${numB}`;
+                mensagemErro.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>
